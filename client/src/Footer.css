@@ -1,0 +1,22 @@
+/* Footer.css */
+.footer {
+    background-color: grey;
+    padding: 20px;
+    color:blanchedalmond;
+    text-align: center; /* Center-aligns the text */
+}
+
+.footer-content {
+    max-width: 800px; /* Optional: limits the width of the content */
+    margin: 0 auto; /* Centers the content block */
+}
+
+.social-media a {
+    margin: 0 10px; /* Adds space between social media links */
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets link color */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
