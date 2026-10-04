@@ -229,6 +229,9 @@ export default UpdateItem;
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 const UpdateItem = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -246,7 +249,7 @@ const UpdateItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/items/${id}`);
+        const response = await fetch(`${API_URL}/${id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -285,7 +288,7 @@ const UpdateItem = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/items/${id}`, {
+      const response = await fetch(`${API_URL}/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
