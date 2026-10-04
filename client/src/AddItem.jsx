@@ -35,6 +35,9 @@ export default AddItem;
 
 import React, { useState } from 'react';
 
+
+const API_URL = import.meta.env.VITE_API_URL;
+
 const AddItem = () => {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
@@ -48,7 +51,7 @@ const AddItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newItem = { name, value, details, category, quantity, supplier, rating, inStock };
-    await fetch('http://localhost:3000/api/items', {
+    await fetch(`${API_URL}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newItem),
